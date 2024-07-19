@@ -98,15 +98,15 @@ class UserController extends Controller
             ], 400);
         };
     }
-    public function destroy(User $id): JsonResponse
+    public function destroy(User $Userid): JsonResponse
     {
 
         try {
-            $id->delete();
+            $Userid->delete();
             return response()->json([
                 "status" => true,
-                "message" => "Usuario " . $id->name . " apagado",
-                "user" => $id,
+                "message" => "Usuario " . $Userid->name . " apagado",
+                "user" => $Userid,
             ], 200);
         } catch (Exception $e) {
 
