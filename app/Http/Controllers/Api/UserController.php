@@ -35,6 +35,8 @@ class UserController extends Controller
             'User' => $Userid,
         ], 200);
     }
+    // Criamos uma request para ser utilizada na EDIÇÃO E CRIAÇÃO de dados fazendo a validação da regra de negocio, verificação de permissoes e menssagens personalizadas 
+    // Após os dados serem validados eles populam as variaveis com as informações de erro ou com as informações a serem inseridas no banco
     public function store(UserRequest $request): JsonResponse
     {
 
@@ -76,7 +78,7 @@ class UserController extends Controller
             $Userid->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => $request->password,
+                 'password' => $request->password,
             ]);
 
             DB::commit();
@@ -116,4 +118,5 @@ class UserController extends Controller
             ], 400);
         }
     }
+
 }
