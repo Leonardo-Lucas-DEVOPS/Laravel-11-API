@@ -14,4 +14,4 @@ route::post('/users/store', [UserController::class, 'store']); //{{URL}}/api/use
 //EDITAR
 route::put('/users/update/{Userid}', [UserController::class, 'update']); //{{URL}}/api/users/update/id + (body:json(name,email,password,))
 //DELETAR
-route::delete('/users/destroy/{Userid}', [UserController::class, 'destroy']);////{{URL}}/api/users/destroy/id
+route::delete('/users/destroy/{Userid}', [UserController::class, 'destroy'])->name('apagar');////{{URL}}/api/users/destroy/id
